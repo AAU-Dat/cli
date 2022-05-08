@@ -9,14 +9,18 @@ flowchart
 
 aau-->setup
 aau-->project
-aau-.->version["--version"]
+
+setup-.->semester["semester=1-10"]
+setup-.->nogh["--no-github"]
+setup-.->novsc["--no-vscode"]
 
 project-->create
 project-->init
 project-->agenda
 project-->mom
 
-create-.->overleaf["--overleaf"]
+create-.->path["path"]
+init-.->path["path"]
 agenda-.->tex["--tex"]
 mom-.->tex
 ```
@@ -36,3 +40,6 @@ All commands can also end with `--help` to explain the command, subcommands and 
 ### Todo
 - Commands for authorization with AAU and GitHub.
 - Standard LaTeX report template.
+- Standard LaTeX and Markdown agenda and minutes template.
+- Standard LaTeX and Markdown group and supervisor contract templates.
+- Consider support for exporting to html/pdf (pandoc?).
